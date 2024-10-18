@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Eamil International</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Explore Our Services</h1>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h2 class="section-title">Our Products</h2>
+        <div class="carousel" onmouseover="pauseCarousel()" onmouseout="resumeCarousel()">
+            <div class="carousel-inner">
+                <div class="carousel-item"><img src="wallet.png" alt=""><br><br><span> Men's Wallet</span></div>
+                <div class="carousel-item"><img src="purse.png" alt=""><br><br><span>Ladies Hand Wallet</span></div>
+                <div class="carousel-item"><img src="bag.png" alt=""><br><br><span>Office Bag</span></div>
+                <div class="carousel-item"><img src="icons8-belt-64.png" alt=""><br><br><span>Men's Belts</span></div>
+                <div class="carousel-item"><img src="purse (1).png" alt=""><br><br><span>Women purse</span></div>
+                <div class="carousel-item"><img src="school-bag.png" alt=""><br><br><span>school bag</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="choose-us-section">
+        <h2>Why Choose Us</h2>
+        <div class="choose-us-container">
+            <div class="choose-us-card">
+                <i class="fas fa-star"></i> <!-- Icon for Quality -->
+                <h3>High Quality Products</h3>
+                <p>Our leather goods are crafted with the finest materials and utmost care, ensuring durability and elegance in every product.</p>
+            </div>
+            <div class="choose-us-card">
+                <i class="fas fa-thumbs-up"></i> <!-- Icon for Service -->
+                <h3>Exceptional Customer Service</h3>
+                <p>We prioritize our customers, providing personalized support and assistance to meet all your leather needs.</p>
+            </div>
+            <div class="choose-us-card">
+                <i class="fas fa-flag-checkered"></i> <!-- Icon for Values -->
+                <h3>Core Values</h3>
+                <p>We believe in transparency, integrity, and sustainability, ensuring that our practices align with our values.</p>
+            </div>
+            <div class="choose-us-card">
+                <i class="fas fa-tree"></i> <!-- Icon for Environment -->
+                <h3>Sustainable Practices</h3>
+                <p>Committed to reducing our environmental footprint, we utilize eco-friendly materials and processes in our production.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Inquiry Form Section -->
+    <div class="inquiry-form" id="inquiry-form">
+        <div id="confirmationMessage"></div>
+          <h2>Get Your Custom Order</h2>
+          <form id="customOrderForm">
+              <label for="name">Name:</label>
+              <input type="text" id="name" required>
+              <label for="email">Email:</label>
+              <input type="email" id="email" required>
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" required>
+              <label for="product">Select Product:</label>
+              <select id="product">
+                  <option value="wallets">Wallets (MOQ: 100)</option>
+                  <option value="laptop-bags">Laptop Bags (MOQ: 100)</option>
+                  <option value="womens-purse">Women’s Purse (MOQ: 100)</option>
+                  <option value="hand-bags">Hand Bags (MOQ: 100)</option>
+                  <option value="safety-gloves">Safety Gloves (MOQ: 100)</option>
+                  <option value="finished-leather">Finished Leather (MOQ: 100)</option>
+              </select>
+              <label for="moq">Enter Quantity (MOQ: 100):</label>
+              <input type="number" id="moq" min="100" value="100" required>
+              <label for="message">Message:</label> 
+              <textarea id="message" rows="4" placeholder="Any custom requests?"></textarea>
+              <button type="submit">Submit Inquiry</button>
+          </form>
+      </div>
+      
+
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <p>"Excellent quality! The wallets exceeded my expectations."</p>
+                <h4>- John Doe</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"The laptop bag is both stylish and functional. Highly recommend!"</p>
+                <h4>- Jane Smith</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Beautiful craftsmanship on the handbags. Love it!"</p>
+                <h4>- Emily Johnson</h4>
+            </div>
+            <div class="testimonial-card">
+                <p>"Fast shipping and great customer service. Will order again!"</p>
+                <h4>- Michael Brown</h4>
+            </div>
+        </div>
+    </div>
+
+    
+    <section class="faqs-section">
+        <h2>FAQs</h2>
+        <div class="faq-box" id="faq1">
+            <div class="faq-question" onclick="toggleAnswer('faq1')">
+                <h3>What services does Eamil International provide?</h3>
+            </div>
+            <div class="faq-answer">
+                <p>We offer leather manufacturing, finished leather products like men's and ladies' wallets, office bags, and custom leather products.</p>
+            </div>
+        </div>
+        
+        <div class="faq-box" id="faq2">
+            <div class="faq-question" onclick="toggleAnswer('faq2')">
+                <h3>Do you offer international shipping?</h3>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we ship globally to various countries and ensure safe, timely delivery of our leather products.</p>
+            </div>
+        </div>
+        
+        <div class="faq-box" id="faq3">
+            <div class="faq-question" onclick="toggleAnswer('faq3')">
+                <h3>Can we customize leather products?</h3>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we provide customization options for leather products to meet your specific requirements.</p>
+            </div>
+        </div>
+        
+        <div class="faq-box" id="faq4">
+            <div class="faq-question" onclick="toggleAnswer('faq4')">
+                <h3>What is the typical production time?</h3>
+            </div>
+            <div class="faq-answer">
+                <p>The production time varies depending on the order, but generally, it takes 2-4 weeks for completion.</p>
+            </div>
+        </div>
+        
+        <div class="faq-box" id="faq5">
+            <div class="faq-question" onclick="toggleAnswer('faq5')">
+                <h3>How can I place an order?</h3>
+            </div>
+            <div class="faq-answer">
+                <p>You can place an order by contacting us through our website, email, or phone. We will guide you through the process.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

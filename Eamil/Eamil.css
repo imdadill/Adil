@@ -1,0 +1,1245 @@
+/* Root variables for easier color changes */
+:root {
+    --bar-bg-color: #eee9e9; /* Engaging yellow */
+    --bar-hover-color: #ffcc00; /* Darker orange */
+    --text-color: #000000; /* Black text for readability */
+    --icon-size: 1.2em;
+    --pop-scale: 1.1;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Announcement bar styling */
+ .announcement-bar {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--bar-bg-color);
+    color: var(--text-color);
+    padding: 14px 20px; /* Optimized padding */
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-text p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Contact info section */
+.contact-info, .email-info {
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* Optimized spacing */
+}
+
+/* Icon styling */
+.icon {
+    margin-right: 8px;
+    font-size: var(--icon-size);
+}
+
+/* Pop-up effect on numbers and email only */
+.pop {
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.pop:hover {
+    transform: scale(var(--pop-scale));
+    color: var(--bar-hover-color); /* Change color on hover */
+}
+
+.night-mode {
+    background-color: #333; /* Dark mode background */
+    color: #fff;
+}
+
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .announcement-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    .contact-info, .email-info {
+        justify-content: center;
+        margin: 5px 0;
+    }
+}
+
+/* Root variables for easier color changes */
+/* Root variables for easier color changes */
+:root {
+    --nav-bg-color: #f8f9fa; /* Off-white */
+    --nav-text-color: #333;
+    --nav-hover-color: #ffcc00; /* Highlight color */
+    --nav-hover-border-color: ##ffa500; /* Border color on hover */
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    padding: 12px 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Logo section */
+.logo img {
+    max-width: 120px;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0 90px 0 60px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--nav-text-color);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover{
+    background: linear-gradient(90deg, #ffa500, #ffcc00);
+    transform: translateY(-5px);
+    color: #ffffff;
+}
+
+.nav-link a.active {
+    background: linear-gradient(90deg, #ffcc00, #ffd700);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+    color: #ffffff;
+}
+
+/* Hover box animation (grow effect) */
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--nav-hover-border-color);
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    transform: scale(1);
+}
+
+/* Hamburger menu (for mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--nav-text-color);
+    margin: 4px 0;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 60px;
+        height: 100vh;
+        width: 100%;
+        background-color: var(--nav-bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar.active .nav-links {
+        display: flex;
+    }
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 640px; /* Adjust height as needed */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: lightgray;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-content p {
+    font-size: 1.25em;
+    margin: 5px 0;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+.left-arrow {
+    left: 20px;
+}
+.right-arrow {
+    right: 26px;
+}
+
+/* Bullets */
+.bullets {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+.bullet {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+}
+.bullet.active {
+    background-color: orange; 
+}
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+    }
+}
+
+/* introduction section */
+
+.intro-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Align items to the start */
+    justify-content: center;
+    padding: 20px;
+}
+
+.intro-image {
+    flex: 0 0 40%;
+    background-image: url('Eamil.hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjusted height */
+    margin-top: 20px; /* Shift image down */
+    opacity: 0.8; /* Faded effect */
+    border: 3px solid #ff6600; /* Border effect */
+}
+
+.intro-content {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    margin-left: 40px; /* Increased space between image and text content */
+}
+
+.intro-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #ff6600; /* CTA button color */
+    display: inline-block;
+}
+
+.intro-content p {
+    font-size: 16px; /* Adjusted font size */
+    color: #808080; /* Light gray color */
+    margin-bottom: 20px;
+    line-height: 1.6; /* Line spacing */
+    word-spacing: 2px; /* Word spacing */
+}
+
+.intro-content a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600; /* CTA button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.intro-content a:hover {
+    background: linear-gradient(90deg, #ffa500, #ffcc00);
+    transform: translateY(-5px);
+}
+
+.intro-content a.active {
+    background: linear-gradient(90deg, #ffcc00, #ffd700);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        flex-direction: column;
+    }
+    .intro-image {
+        height: 200px;
+    }
+}
+
+/* featured products */
+
+.featured-product-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #2b2b2b;
+  }
+  
+  .featured-product-section h2 {
+    font-size: 24px;
+    margin-bottom: 54px;
+    color: #ffffff;
+  }
+  
+  .product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Gap between each product */
+    padding: 0 20px; /* Gaps on the left and right sides of the screen */
+  }
+  
+  .product-item {
+    width: 180px;
+    height: auto; /* Allow height to adjust based on content */
+    position: relative;
+  }
+  
+  .product-item.alternate {
+    padding-top: 40px; /* Adds top padding for alternate images */
+  }
+  
+  .product-image {
+    width: 180px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: block; /* Make the entire image clickable */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-item:nth-child(1) .product-image {
+    background-image: url('Eamil.images/card1.jpg'); /* Replace with actual image URLs */
+  }
+  
+  .product-item:nth-child(2) .product-image {
+    background-image: url('Eamil.images/card2.jpg');
+  }
+  
+  .product-item:nth-child(3) .product-image {
+    background-image: url('Eamil.images/card3.jpg');
+  }
+  
+  .product-item:nth-child(4) .product-image {
+    background-image: url('Eamil.images/card4.jpg');
+  }
+  
+  .product-item:nth-child(5) .product-image {
+    background-image: url('Eamil.images/card5.jpg');
+  }
+  
+  .product-item:nth-child(6) .product-image {
+    background-image: url('Eamil.images/card6.jpg');
+  }
+  
+  .product-image:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+  }
+  
+  .product-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  
+  /* Responsive Design */
+  
+  @media (max-width: 1024px) {
+    .product-grid {
+      flex-wrap: wrap; /* Products will wrap into multiple rows for tablets */
+    }
+    
+    .product-item {
+      width: 30%; /* Adjusts the width of each product item for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-item {
+      width: 45%; /* Adjusts the width for mobile devices */
+    }
+  
+    .product-grid {
+      gap: 10px; /* Reduce gap for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-item {
+      width: 100%; /* One product per row on very small screens */
+    }
+    
+    .product-grid {
+      padding: 0; /* Remove side padding for very small screens */
+    }
+  }
+  
+/* video section */
+.video-container {
+    background-color: #2b2b2b;
+    position: relative;
+    height: 440px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 2; /* Ensure text is above video */
+}
+
+.headline, .subtext {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+.headline {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.subtext {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Our clients */
+
+.client-section {
+    background: #2b2b2b; /* Deep grey background for contrast */
+    padding: 80px 50px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .client-section h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    font-family: 'Playfair Display', serif; /* Elegant, premium font */
+    color: #ff914d; /* Orange accent color */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .client-section h2::after {
+    content: '';
+    width: 120px;
+    height: 5px;
+    background-color: #ff914d; /* Orange underline */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+  }
+  
+  /* Client Container Styling */
+  .client-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 logos per row */
+    gap: 40px; /* Equal space between items */
+    padding: 0 40px;
+  }
+  
+  .client-box {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08); /* Slight transparent background for depth */
+    border-radius: 15px;
+    padding: 25px 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; /* Border color transition added */
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  }
+  
+  .client-box:hover {
+    transform: translateY(-10px) scale(1.05); /* Lift and zoom effect on hover */
+    border-color: #ff914d; /* Change border color on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  }
+  
+  .client-box img {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0.9;
+  }
+  
+  .client-box:hover img {
+    transform: scale(1.2); /* Logo zoom effect */
+    opacity: 1; /* Increased opacity */
+  }
+  
+  .client-box p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #ff914d; /* Orange text for brand names */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.4s ease;
+  }
+  
+  .client-box:hover p {
+    color: #fff; /* White text on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .client-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 logos per row on tablets */
+      gap: 30px;
+    }
+  
+    .client-box {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .client-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 logos per row for medium devices */
+      gap: 20px;
+    }
+  
+    .client-box img {
+      max-width: 80px; /* Reduce image size for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .client-container {
+      grid-template-columns: 1fr; /* Full width for small screens */
+      gap: 20px;
+    }
+  
+    .client-box {
+      padding: 15px;
+    }
+  
+    .client-box img {
+      max-width: 60px; /* Further reduce logo size */
+    }
+  
+    .client-box p {
+      font-size: 16px; /* Smaller font for small screens */
+    }
+  }
+  
+
+/* card slider section */
+
+/* General Styles */
+
+.testimonial-slider {
+    position: relative;
+    max-width: 100%; /* Ensure the slider takes the full width of the screen */
+    margin: 60px auto; /* Add margin at the top and bottom */
+    overflow: hidden;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px; /* Increase gap between images */
+}
+
+.testimonial-card {
+    position: relative;
+    flex: 1 0 calc(25% - 20px); /* Ensure only 4 images are visible at a time */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.testimonial-card:hover .hover-content {
+    opacity: 1;
+}
+
+.service-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+    background-color: #cc5200;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Optional: make the buttons circular */
+    transition: background-color 0.3s ease;
+}
+
+.left-btn {
+    left: 26px; /* Position to the left */
+}
+
+.right-btn {
+    right: 46px; /* Position to the right */
+}
+
+/* Hover effects */
+.slider-btn:hover {
+    background-color: orange; /* Change background on hover */
+    color: #000; /* Change text color on hover */
+}
+
+.slider-btn:disabled {
+    opacity: 0.5; /* Make disabled buttons semi-transparent */
+    cursor: not-allowed; /* Change cursor to indicate non-clickable */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .testimonial-card {
+        flex: 1 0 calc(50% - 20px); /* Show 2 images at a time on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        flex: 1 0 calc(100% - 20px); /* Show 1 image at a time on small screens */
+    }
+}
+
+/* styles.css */
+
+/* Scroll to Top Button Style */
+.scroll-top-btn {
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from bottom */
+    left: 20px; /* Positioning on the left side */
+    background-color: orange; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    width: 40px; /* Set width to 20px */
+    height: 40px; /* Set height to 20px */
+    cursor: pointer; /* Pointer cursor */
+    z-index: 1000; /* On top of other elements */
+    display: none; /* Initially hidden */
+    transition: opacity 0.3s; /* Smooth transition */
+    text-align: center; /* Center text inside */
+}
+
+/* Additional styling for hover effect */
+.scroll-top-btn:hover {
+    opacity: 0.8; /* Slightly transparent on hover */
+}
+
+/* Optional: Change font size and icon styling if using an icon */
+.scroll-top-btn i {
+    font-size: 20px; /* Adjust icon size if using Font Awesome */
+    line-height: 20px; /* Center icon vertically */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    padding: 40px 20px; /* Padding for the footer */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+    justify-content: space-between; /* Space between boxes */
+}
+
+.footer-box {
+    width: 25%; /* Each box takes up 25% of the width */
+    padding: 20px; /* Padding inside each box */
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-bottom: 20px; /* Margin for bottom spacing */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Right border for boxes */
+}
+
+.footer-box:last-child {
+    border-right: none; /* Remove border for last box */
+}
+
+.logo-box {
+    text-align: center; /* Center align logo and description */
+}
+
+.logo {
+    max-width: 100%; /* Responsive logo */
+    height: auto;
+}
+
+.menu-box ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.menu-box ul li {
+    margin: 10px 0; /* Space between menu items */
+}
+
+.menu-box ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* Link color */
+    position: relative; /* For border effect */
+}
+
+.menu-box ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: orange; /* Border color */
+    transition: width 0.3s; /* Smooth transition */
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu-box ul li a:hover::after {
+    width: 100%; /* Expand border on hover */
+}
+
+.newsletter-box {
+    padding: 25px; /* Increased padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.newsletter-box form {
+    display: flex; /* Flexbox for form layout */
+}
+
+.newsletter-box input {
+    padding: 14px;
+    flex: 1; /* Take up available space */
+    border: 1px solid #ccc; /* Border styling */
+    border-top-left-radius: 5px; /* Rounded corners for input */
+    border-bottom-left-radius: 5px; /* Rounded corners for input */
+}
+
+.newsletter-box button {
+    padding: 14px;
+    background-color: orange; /* Button color */
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    border-top-right-radius: 5px; /* Rounded corners for input */
+    border-bottom-right-radius: 5px; /* Rounded corners for input */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#alertBox {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Vertical stacking of contact items */
+}
+
+.contact-item {
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+.contact-info a {
+    color: #fff; /* Link color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.contact-info a:hover {
+    color: orange; /* Change color on hover */
+}
+.social-media-container {
+    text-align: center; /* Center align social media icons */
+    margin-top: 20px; /* Margin on top */
+}
+
+.social-icon {
+    display: inline-block;
+    width: 48px; /* Width of the icon */
+    height: 48px; /* Height of the icon */
+    margin: 0 10px; /* Margin for spacing */
+    border-radius: 50%; /* Rounded corners */
+    background-color: orange; /* Default background color */
+    color: white; /* Default icon color */
+    transition: transform 0.3s, background-color 0.3s; /* Transition for hover effect */
+}
+
+/* Hover effects */
+.social-icon:hover {
+    transform: scale(1.1); /* Scale up the icon */
+    background-color: #ffcc00; /* Change background color on hover */
+}
+
+/* Adjust icon color inside */
+.social-icon i {
+    font-size: 24px; /* Icon size */
+    line-height: 48px; /* Center icon vertically */
+}
+
+.copyright {
+    text-align: center; /* Center align copyright */
+    margin-top: 20px; /* Margin for spacing */
+    color: white; /* Copyright text color */
+}
+
+
+.copyright-link {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.copyright-link:hover {
+    color: orange; /* Change color on hover */
+}
+
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-icon i {
+    font-size: 24px;
+}
+
+/* Chat Window */
+.chat-window {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    background-color: beige;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Chat Header with WhatsApp Icon and Heading */
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #25D366;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-header-icon {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.chat-header h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+/* Chat Body */
+.chat-body {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Custom Scrollbar */
+.chat-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+/* Messages */
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.message p {
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.sent p {
+    background-color: white;
+    color: black;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.received p {
+    background-color: #e1ffc7;
+    color: black;
+    border-bottom-left-radius: 0px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Time and Read Receipt */
+.message-time {
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    font-size: 10px;
+    color: #888;
+}
+
+.read-receipt {
+    margin-left: 5px;
+    color: #25D366;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: none;
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite alternate;
+}
+
+@keyframes bounce {
+    to {
+        opacity: 0.3;
+        transform: translateY(-5px);
+    }
+}
+
+/* Chat Footer */
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: white;
+}
+
+.emoji-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.emoji-btn:hover {
+    color: #25D366;
+}
+
+#userMessage {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    outline: none;
+    margin: 0 10px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#userMessage:focus {
+    border-color: #25D366;
+    box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.send-btn {
+    background-color: #25D366;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.send-btn i {
+    color: white;
+    font-size: 16px;
+}
+
+.send-btn:hover {
+    background-color: #20c35a;
+    transform: scale(1.1);
+}
+
+/* Close Chat Icon */
+.close-chat-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+}
+
+/* Typing indicator styles remain unchanged */
+.typing-indicator {
+    display: none; /* Initially hidden, will be shown once */
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-box {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Margin for bottom spacing */
+        border-right: none; /* Remove border for last box */
+    }
+}

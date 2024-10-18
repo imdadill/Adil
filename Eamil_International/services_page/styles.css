@@ -1,0 +1,464 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.hero {
+    background-image: url('Eamil.hero5.jpg'); /* Replace with your background image URL */
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Main Product Section */
+/* Main Product Section */
+.product-section {
+    margin: 20px 0;
+    padding: 20px;
+}
+
+/* Section Title Styling */
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+}
+
+/* Carousel Styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Default to 3 items per row */
+.carousel-item {
+    min-width: 33.33%;
+}
+
+/* Item Text Style */
+.carousel-item span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Item Image Style */
+.carousel-item img {
+    height: 4rem;
+    width: 4rem;
+}
+
+/* Carousel Control Styles */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 50%; /* 2 items per row on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 100%; /* Full width on small screens */
+    }
+
+    .section-title {
+        font-size: 1.5em; /* Smaller title size for mobile */
+    }
+}
+
+/* Inquiry Section */
+.inquiry-form {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.inquiry-form:hover {
+    transform: scale(1.02);
+}
+
+.inquiry-form h2 {
+    color: #ff4500; /* OrangeRed */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inquiry-form form {
+    display: inline-block;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.inquiry-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+.inquiry-form input,
+.inquiry-form select,
+.inquiry-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ff4500; /* Orange border */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+    font-size: 1rem;
+    font-family: 'Verdana', sans-serif;
+    color: #333;
+}
+
+.inquiry-form input:focus,
+.inquiry-form select:focus,
+.inquiry-form textarea:focus {
+    border-color: #ff4500; /* OrangeRed */
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.2);
+}
+
+.inquiry-form button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff4500; /* OrangeRed */
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.inquiry-form button:hover {
+    background-color: #e63946; /* Darker shade on hover */
+    transform: scale(1.05);
+}
+
+#alertBox {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.inquiry-list {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+}
+
+.inquiry-list h3 {
+    color: #ff4500; /* OrangeRed */
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+}
+
+.inquiry-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.inquiry-list li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.inquiry-list li:hover {
+    background-color: #f1f1f1;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Choose Us Section */
+.why-choose-us {
+    padding: 40px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    color: #333;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.choose-us-section {
+    padding: 50px 20px;
+    background-color: #fff; /* White background */
+    text-align: center;
+}
+
+.choose-us-section h2 {
+    font-size: 2.5em;
+    color: #333; /* Darker text color */
+    margin-bottom: 30px;
+}
+
+.choose-us-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between cards */
+}
+
+.choose-us-card {
+    background-color: #f8f8f8; /* Light gray for card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 250px; /* Fixed width for cards */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.choose-us-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.choose-us-card i {
+    font-size: 40px;
+    color: #ff6f20; /* Orange color for icons */
+    margin-bottom: 15px;
+}
+
+.choose-us-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.choose-us-card p {
+    font-size: 1em;
+    color: #666; /* Gray text for descriptions */
+}
+
+/* Testimonial Card Section */
+.testimonials {
+    padding: 40px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.testimonials h2 {
+    color: #ff7f50; /* Coral color */
+    margin-bottom: 20px;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    padding: 10px 0;
+}
+
+.testimonial-card {
+    flex: 0 0 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #666;
+}
+
+.testimonial-card cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsive Adjustments */
+@media (max-width: 768px) {
+    .choose-us-card {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .testimonial-slider {
+        flex-direction: column; /* Stack cards vertically on mobile */
+    }
+
+    .testimonial-card {
+        margin: 10px 0; /* Adjust margin for stacked layout */
+    }
+}
+
+/* Base Styles (already provided) */
+
+.faqs-section {
+    background-color: #f9f9f9; /* Light background for better contrast */
+    padding: 40px 20px; /* Padding for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 800px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section */
+}
+
+.faqs-section h2 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    font-size: 28px; /* Heading size */
+    color: #333; /* Dark text color */
+}
+
+.faq-box {
+    border-bottom: 1px solid #ddd; /* Divider between FAQs */
+    margin-bottom: 20px; /* Space below each FAQ */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.faq-box:last-child {
+    border-bottom: none; /* Remove border for the last FAQ */
+}
+
+.faq-question {
+    cursor: pointer; /* Pointer cursor for clickable questions */
+    padding: 15px; /* Padding for better touch area */
+    background-color: #ffffff; /* White background for questions */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+}
+
+.faq-answer {
+    display: none; /* Hide answer by default */
+    padding: 10px 15px; /* Padding for answers */
+    background-color: #fafafa; /* Light grey background for answers */
+    border-left: 3px solid #4CAF50; /* Green left border */
+}
+
+.faq-answer p {
+    margin: 0; /* Remove default margin */
+    color: #555; /* Dark grey text for answers */
+}
+
+/* Add styles for open state */
+.faq-box.open .faq-answer {
+    display: block; /* Show answer when open */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .faqs-section {
+        padding: 30px 15px; /* Less padding for smaller screens */
+    }
+
+    .faqs-section h2 {
+        font-size: 24px; /* Smaller heading size */
+    }
+
+    .faq-question {
+        padding: 12px; /* Less padding for questions */
+    }
+
+    .faq-answer {
+        padding: 8px 12px; /* Less padding for answers */
+    }
+}
+
+@media (max-width: 480px) {
+    .faqs-section {
+        padding: 20px 10px; /* Further reduce padding */
+    }
+
+    .faqs-section h2 {
+        font-size: 20px; /* Even smaller heading size */
+    }
+
+    .faq-question {
+        padding: 10px; /* Further reduce padding for questions */
+    }
+
+    .faq-answer {
+        padding: 6px 10px; /* Further reduce padding for answers */
+    }
+}

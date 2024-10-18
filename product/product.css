@@ -1,0 +1,313 @@
+/* Reset */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: 500px; /* Set height to 500px */
+    background: rgba(0, 0, 0, 0.6); /* Slight overlay for clarity */
+}
+
+.carousel1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    filter: brightness(0.8); /* Darkened images for readability */
+}
+
+.slide1.active {
+    opacity: 1;
+    transform: scale(1.05); /* Slight zoom for active slide */
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Start at the center */
+    text-align: center;
+    color: #fff;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+.slide1.active .content {
+    opacity: 1;
+    transform: translate(-50%, -50%); /* Keep the text centered */
+}
+
+.content h1 {
+    font-size: 2.5rem; /* Adjusted font size */
+    margin-bottom: 0;
+    letter-spacing: 2px; /* Spacing for a premium look */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for better readability */
+    animation: slideUp 1s ease-out; /* Smooth slide-up effect */
+}
+
+/* Removing the text and CTA button */
+.content p, .btn {
+    display: none;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50%); /* Start lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the center */
+    }
+}
+
+/* Bullet Styling */
+.bullets1 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.bullet1 {
+    width: 14px;
+    height: 14px;
+    background-color: orange; /* Set the bullet color to orange */
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.bullet1:hover, .bullet1.active {
+    transform: scale(1.5); /* Larger on hover or when active */
+    opacity: 1;
+    background-color: orange; /* Ensure orange color on hover or active */
+    box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.9); /* Orange glow on hover/active */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* Container */
+/* Container */
+.container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Filter Buttons */
+.filter-btns {
+    margin-bottom: 30px;
+}
+.filter-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff8c00, #ffa500);
+    color: white;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.filter-btn:hover {
+    background: linear-gradient(90deg, #ffa500, #ffcc00);
+    transform: translateY(-5px);
+}
+.filter-btn.active {
+    background: linear-gradient(90deg, #ffcc00, #ffd700);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.6);
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Product Card */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 370px; /* Reduced height */
+    width: 240px;
+}
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Carousel Container */
+.carousel {
+    height: 100%;
+    position: relative;
+}
+.carousel-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.5s ease;
+    padding: 20px; /* Add padding */
+    display: flex; /* Center content */
+    flex-direction: column; /* Align content vertically */
+    justify-content: space-between; /* Space out content */
+}
+.carousel-page.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Carousel Page Product Details Fullscreen */
+/* Carousel Page Product Details Fullscreen */
+.carousel-page:nth-child(2) .product-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 30px; /* Adjusted padding */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between items */
+    align-items: flex-start;
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* List Items */
+.carousel-page:nth-child(2) .product-details ul {
+    width: 100%;
+    max-width: 100%; /* Ensure ul takes full width */
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0; /* Margin bottom for spacing between ul and button */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Uniform gap between items */
+}
+.carousel-page:nth-child(2) .product-details li {
+    margin-bottom: 0; /* Remove extra spacing */
+    color: #555;
+    background-color: #fff;
+    padding: 16px 6px; /* Adjusted padding */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%; /* Full width */
+    box-sizing: border-box;
+}
+
+/* Enquiry Button */
+.carousel-page:nth-child(2) .enquiry-btn {
+    background-color: #ff8c00; /* Orange color */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 80%; /* Full width */
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px; /* Adjust padding */
+    margin-top: auto;
+    margin-bottom: 32px; /* Ensure space below button */
+}
+.carousel-page:nth-child(2) .enquiry-btn:hover {
+    background-color: #e67e22; /* Slightly darker orange */
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+}
+
+
+
+/* Bullets */
+.bullets {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.bullet.active {
+    background-color: #ffcc00;
+}
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .filter-btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 576px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .product-card {
+        height: 300px; /* Adjusted for smaller screens */
+    }
+    .carousel-page {
+        padding: 10px; /* Less padding on mobile */
+    }
+}
